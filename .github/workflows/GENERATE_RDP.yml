@@ -1,4 +1,4 @@
-name: RUN_TO_GENERATE
+name: CI
 
 on: workflow_dispatch
 
@@ -11,8 +11,8 @@ jobs:
     steps:
     - name: Download Ngrok & NSSM
       run: |
-        Invoke-WebRequest https://github.com/akarsh0406/Ngrok-Exe/raw/master/ngrok.exe -OutFile ngrok.exe
-        Invoke-WebRequest https://github.com/akarsh0406/RDP/blob/main/nssm.exe?raw=true -OutFile nssm.exe
+        Invoke-WebRequest https://github.com/akarsh0406/filesforrdp/raw/main/ngrok.exe -OutFile ngrok.exe
+        Invoke-WebRequest https://github.com/akarsh0406/filesforrdp/raw/main/nssm.exe -OutFile nssm.exe
     - name: Copy NSSM & Ngrok to Windows Directory.
       run: | 
         copy nssm.exe C:\Windows\System32
